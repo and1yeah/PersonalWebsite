@@ -1,29 +1,36 @@
 import React, {Component} from 'react';
 import { Route } from 'react-router-dom';
-// Boiler
-import Header from '../boilerplate/Header';
-import Footer from '../boilerplate/Footer';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 // Components
-import Home from '../components/Home';
+import Home from '../components/Home/Home';
+import Header from '../boilerplate/Header';
 // Style
-import './assets/application.css';
+import '../assets/application.css';
+
+const styles = {
+  root: {
+    flexGrow: 1,
+  }
+};
 
 class App extends Component {
+
   render() {
+
+    const { classes } = this.props;
+
     return (
-      <div className="App">
-        <header>
-          <Header/>
-        </header>
-        <body>
-          <Route path="/" exact component={Home}/>
-        </body>
-        <footer>
-          <Footer/>
-        </footer>
+      <div className= {classes.root}>
+        <Header />
+        <Route path="/" exact component={Home}/>
       </div>
     );
   }
 }
 
-export default App;
+App.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(App);
