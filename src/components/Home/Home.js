@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import Icon from '@material-ui/core/Icon';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import deepPurple from '@material-ui/core/colors/deepPurple';
 import Typography from '@material-ui/core/Typography';
@@ -44,12 +43,12 @@ class Home extends React.Component {
           <Avatar alt="Andy Ye" className={classes.bigAvatar}>AY</Avatar>
           <Typography component="h2" variant="headline" gutterBottom>Andy Wong Ye | Software Engineer</Typography>
           <Grid item>
-            <IconButton className={classes.socialIcon}>
+            <IconButton className={classes.socialIcon} href="https://www.facebook.com/And1.Yeah">
               <SvgIcon fontSize="large">
                 <path d={Constants.facebook}/>
               </SvgIcon>
             </IconButton>
-            <IconButton className={classes.socialIcon}>
+            <IconButton className={classes.socialIcon} href="http://www.linkedin.com/in/And1-Yeah">
               <SvgIcon fontSize="large">
                 <path d={Constants.linkedin}/>
               </SvgIcon>
