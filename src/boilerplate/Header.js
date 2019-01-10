@@ -49,8 +49,8 @@ class Header extends React.Component {
                 textColor="primary">
                 <Tab color="inherit" label="Home" component={Link} to="/"/>
                 <Tab color="inherit" label="About" component={Link} to="/about"/>
-                <Tab color="inherit" label="Projects" component={Link} to="/projects"/>
                 <Tab color="inherit" label="Experience" component={Link} to="/experience"/>
+                <Tab color="inherit" label="Projects" component={Link} to="/projects"/>
                 <Tab color="inherit" label="Contact" component={Link} to="/contact"/>
               </Tabs>
             </Grid>

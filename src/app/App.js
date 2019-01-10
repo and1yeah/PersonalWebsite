@@ -6,8 +6,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Header from '../boilerplate/Header';
 import Home from '../components/Home/Home';
 import About from '../components/About/About';
-import Projects from '../components/Projects/Projects';
 import Experience from '../components/Experience/Experience';
+import Projects from '../components/Projects/Projects';
 import Contact from '../components/Contact/Contact';
 // Style
 import '../assets/application.css';
@@ -29,8 +29,8 @@ class App extends Component {
         <Header />
         <Route path="/" exact component={Home}/>
         <Route path="/about" exact component={About}/>
-        <Route path="/projects" exact component={Projects}/>
         <Route path="/experience" exact component={Experience}/>
+        <Route path="/projects" exact component={Projects}/>
         <Route path="/contact" exact component={Contact}/>
       </div>
     );
