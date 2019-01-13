@@ -7,16 +7,17 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Grid from '@material-ui/core/Grid';
+// Assets
 import '../assets/application.css';
 
 const styles = {
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
   appBar: {
     boxShadow: 'none',
-  }
+    background: 'transparent',
+  },
+  tabs: {
+    marginTop: 0,
+  },
 };
 
 class Header extends React.Component {
@@ -35,7 +36,7 @@ class Header extends React.Component {
 
     return (
       <div>
-        <AppBar className={classes.appBar} position="static" color="transparent">
+        <AppBar className={classes.appBar} position="static">
           <Toolbar>
             <Grid
               container
@@ -43,15 +44,16 @@ class Header extends React.Component {
               justify="flex-end"
               alignItems="center">
               <Tabs
+                className={classes.tabs}
                 value={value}
                 onChange={this.handleChange}
                 indicatorColor="primary"
                 textColor="primary">
-                <Tab color="inherit" label="Home" component={Link} to="/"/>
-                <Tab color="inherit" label="About" component={Link} to="/about"/>
-                <Tab color="inherit" label="Experience" component={Link} to="/experience"/>
-                <Tab color="inherit" label="Projects" component={Link} to="/projects"/>
-                <Tab color="inherit" label="Contact" component={Link} to="/contact"/>
+                <Tab color="inherit" label={<b>Home</b>} component={Link} to="/"/>
+                <Tab color="inherit" label={<b>About</b>} component={Link} to="/about"/>
+                <Tab color="inherit" label={<b>Experience</b>} component={Link} to="/experience"/>
+                <Tab color="inherit" label={<b>Projects</b>} component={Link} to="/projects"/>
+                <Tab color="inherit" label={<b>Contact</b>} component={Link} to="/contact"/>
               </Tabs>
             </Grid>
           </Toolbar>
