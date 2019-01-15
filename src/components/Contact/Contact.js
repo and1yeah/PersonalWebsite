@@ -4,26 +4,42 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 // Components
 
-const styles = {
+const styles = theme => ({
   grid: {
-    minHeight: '50vh',
+    minHeight: '60vh',
     width: '100%',
   },
   innerGrid: {
-    width: '60%',
+    width: '40%',
   },
   underline: {
     textTransform: 'uppercase',
   },
   textField: {
-    marginLeft: 20,
-    marginRight: 20,
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
   },
-};
+  button: {
+    marginTop: 20,
+    margin: theme.spacing.unit,
+    width: '100px',
+  },
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
+  },
+});
 
 class Contact extends React.Component {
+
+  state = {
+    name: '',
+    email: '',
+    message: '',
+  };
 
   handleChange = name => event => {
     this.setState({
@@ -51,31 +67,40 @@ class Contact extends React.Component {
             direction="column"
             justify="center">
             <TextField
+              className={classes.textField}
               id="outlined-name"
               label="Name"
-              className={classes.textField}
+              value={this.state.name}
               onChange={this.handleChange('name')}
               margin="normal"
-              variant="outlined"
             />
             <TextField
-              id="outlined-name"
+              className={classes.textField}
+              id="outlined-email"
               label="Email"
-              className={classes.textField}
-              onChange={this.handleChange('name')}
+              value={this.state.email}
+              onChange={this.handleChange('email')}
               margin="normal"
-              variant="outlined"
             />
             <TextField
+              className={classes.textField}
               id="outlined-multiline-flexible"
               label="Message"
               multiline
               rowsMax="4"
-              onChange={this.handleChange('multiline')}
-              className={classes.textField}
+              value={this.state.message}
+              onChange={this.handleChange('message')}
               margin="normal"
-              variant="outlined"
+
             />
+            <Grid 
+              container
+              justify="flex-end">
+              <Button className={classes.button} variant="contained" color="primary">
+                Send
+                <Icon className={classes.rightIcon}>send</Icon>
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
       </div>
