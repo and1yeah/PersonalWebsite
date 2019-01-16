@@ -7,8 +7,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Grid from '@material-ui/core/Grid';
-// Assets
-import '../assets/application.css';
 
 const styles = {
   appBar: {

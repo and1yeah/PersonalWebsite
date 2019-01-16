@@ -9,7 +9,6 @@ import deepPurple from '@material-ui/core/colors/deepPurple';
 import Typography from '@material-ui/core/Typography';
 // Assets
 import * as Constants from '../../assets/constants';
-import '../../assets/application.css';
 import Background from '../../assets/images/background/background1.jpg';
 
 const quote = createMuiTheme({
@@ -27,7 +26,6 @@ const styles = {
      	backgroundPosition: "center center",
      	backgroundSize: "cover",
       backgroundAttachment: "fixed",
-      transition: 'fadein',
       opacity: 1,
       transition: '2s',
      	height: "100%",
