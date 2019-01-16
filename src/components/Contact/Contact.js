@@ -8,7 +8,28 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 // Components
 
+// Assets
+import Background from '../../assets/images/background/background2.jpg';
+
 const styles = theme => ({
+  "@global": {
+    body: {
+    	backgroundImage: 'url(' + Background + ')',
+   		backgroundRepeat: "no-repeat",
+     	backgroundPosition: "center center",
+     	backgroundSize: "cover",
+      backgroundAttachment: "fixed",
+      opacity: 1,
+      transition: '2s',
+     	height: "100%",
+    },
+  	html: {
+     	height: "100%",
+    },
+    "#componentWithId": {
+     	height: "100%",
+    }
+	},
   grid: {
     minHeight: '60vh',
     width: '100%',
@@ -16,20 +37,31 @@ const styles = theme => ({
   innerGrid: {
     width: '40%',
   },
-  underline: {
+  contact: {
+    color: '#0f0f13',
     textTransform: 'uppercase',
+  },
+  meet: {
+    color: '#827e7e',
   },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
   },
-  button: {
+  send: {
     marginTop: 20,
     margin: theme.spacing.unit,
     width: '100px',
   },
   rightIcon: {
     marginLeft: theme.spacing.unit,
+  },
+  bar: {
+    width: '100px',
+    height: '5px',
+    marginBottom: '10px',
+    display: 'block',
+    backgroundColor: '#3f51b5',
   },
 });
 
@@ -59,8 +91,9 @@ class Contact extends React.Component {
           direction="column"
           alignItems="center"
           justify="center">
-          <Typography className={classes.underline} component="h2" variant="display1" gutterBottom>Contact</Typography>
-          <Typography variant="title" gutterBottom>Have a question or want to work together?</Typography>
+          <Typography className={classes.contact} component="h2" variant="display1" gutterBottom><b>Contact</b></Typography>
+          <span className={classes.bar}></span>
+          <Typography className={classes.meet} variant="title" gutterBottom><b>Have a question or want to work together?</b></Typography>
           <Grid
             className={classes.innerGrid}
             container
@@ -69,7 +102,7 @@ class Contact extends React.Component {
             <TextField
               className={classes.textField}
               id="outlined-name"
-              label="Name"
+              label={<b>Name</b>}
               value={this.state.name}
               onChange={this.handleChange('name')}
               margin="normal"
@@ -77,7 +110,7 @@ class Contact extends React.Component {
             <TextField
               className={classes.textField}
               id="outlined-email"
-              label="Email"
+              label={<b>Email</b>}
               value={this.state.email}
               onChange={this.handleChange('email')}
               margin="normal"
@@ -85,7 +118,7 @@ class Contact extends React.Component {
             <TextField
               className={classes.textField}
               id="outlined-multiline-flexible"
-              label="Message"
+              label={<b>Message</b>}
               multiline
               rowsMax="4"
               value={this.state.message}
@@ -96,8 +129,8 @@ class Contact extends React.Component {
             <Grid 
               container
               justify="flex-end">
-              <Button className={classes.button} variant="contained" color="primary">
-                Send
+              <Button className={classes.send} variant="contained" color="primary">
+                <b>Send</b>
                 <Icon className={classes.rightIcon}>send</Icon>
               </Button>
             </Grid>

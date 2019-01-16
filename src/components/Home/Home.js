@@ -7,10 +7,10 @@ import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import deepPurple from '@material-ui/core/colors/deepPurple';
 import Typography from '@material-ui/core/Typography';
-// Components
 // Assets
 import * as Constants from '../../assets/constants';
 import '../../assets/application.css';
+import Background from '../../assets/images/background/background1.jpg';
 
 const quote = createMuiTheme({
   typography: {
@@ -18,7 +18,27 @@ const quote = createMuiTheme({
   },
 });
 
+
 const styles = {
+	"@global": {
+    body: {
+    	backgroundImage: 'url(' + Background + ')',
+   		backgroundRepeat: "no-repeat",
+     	backgroundPosition: "center center",
+     	backgroundSize: "cover",
+      backgroundAttachment: "fixed",
+      transition: 'fadein',
+      opacity: 1,
+      transition: '2s',
+     	height: "100%",
+    },
+  	html: {
+     	height: "100%",
+    },
+    "#componentWithId": {
+     	height: "100%",
+    }
+	},
   grid: {
     minHeight: '80vh',
     width: '100%',
@@ -27,13 +47,17 @@ const styles = {
     margin: 30,
     color: '#fff',
     backgroundColor: deepPurple[500],
-    width: 175,
-    height: 175,
+    width: 200,
+    height: 200,
   },
-  socialIcon: {
+  socialBtn: {
     marginLeft: 20,
     marginRight: 20,
-  }
+  },
+  socialIcon: {
+    width: 30,
+    height: 30,
+  },
 };
 
 class Home extends React.Component {
@@ -50,23 +74,23 @@ class Home extends React.Component {
           alignItems="center"
           justify="center">
           <Avatar alt="Andy Ye" className={classes.bigAvatar}>AY</Avatar>
-          <Typography component="h2" variant="headline" gutterBottom>Andy Wong Ye | Software Engineer</Typography>
+          <Typography component="h2" variant="headline" gutterBottom><b>Andy Wong Ye | Software Engineer</b></Typography>
           <MuiThemeProvider theme={quote}>
-            <Typography variant="title" gutterBottom>"Be Happy, But Never Satisfied"</Typography>
+            <Typography variant="title" gutterBottom><b>"Be Happy, But Never Satisfied"</b></Typography>
           </MuiThemeProvider>
           <Grid item>
-            <IconButton className={classes.socialIcon} href="https://www.facebook.com/And1.Yeah">
-              <SvgIcon fontSize="large" nativeColor='#3b5998'>
+            <IconButton className={classes.socialBtn} href="https://www.facebook.com/And1.Yeah">
+              <SvgIcon className={classes.socialIcon} fontSize="large" nativeColor='#3b5998'>
                 <path d={Constants.facebook}/>
               </SvgIcon>
             </IconButton>
-            <IconButton className={classes.socialIcon} href="http://www.linkedin.com/in/And1-Yeah">
-              <SvgIcon fontSize="large" nativeColor='#007bb6'>
+            <IconButton className={classes.socialBtn} href="http://www.linkedin.com/in/And1-Yeah">
+              <SvgIcon className={classes.socialIcon} fontSize="large" nativeColor='#007bb6'>
                 <path d={Constants.linkedin}/>
               </SvgIcon>
             </IconButton>
-            <IconButton className={classes.socialIcon}>
-              <SvgIcon fontSize="large" nativeColor='#bc2a8d'>
+            <IconButton className={classes.socialBtn} href="https://www.instagram.com/and1.yeah/">
+              <SvgIcon className={classes.socialIcon} fontSize="large" nativeColor='#bc2a8d'>
                 <path d={Constants.instagram}/>
               </SvgIcon>
             </IconButton>

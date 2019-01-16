@@ -15,7 +15,7 @@ import '../assets/application.css';
 const styles = {
   root: {
     flexGrow: 1,
-  }
+  },
 };
 
 class App extends Component {
