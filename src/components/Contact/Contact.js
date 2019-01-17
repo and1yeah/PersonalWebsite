@@ -17,8 +17,7 @@ const styles = theme => ({
      	backgroundPosition: "center center",
      	backgroundSize: "cover",
       backgroundAttachment: "fixed",
-      opacity: 1,
-      transition: '2s',
+      transition: '2s ease-in-out',
      	height: "100%",
     },
   	html: {
