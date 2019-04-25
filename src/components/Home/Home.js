@@ -9,7 +9,7 @@ import deepPurple from '@material-ui/core/colors/deepPurple';
 import Typography from '@material-ui/core/Typography';
 // Assets
 import * as Constants from '../../assets/constants';
-import Background from '../../assets/images/background/background1.jpg';
+import Background from '../../assets/images/background/home.jpg';
 
 const quote = createMuiTheme({
   typography: {
