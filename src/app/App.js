@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 // Components
 import Header from '../boilerplate/Header';
 import Home from '../components/Home/Home';
@@ -14,6 +15,10 @@ const styles = {
   root: {
     flexGrow: 1,
   },
+  grid: {
+    minHeight: '80vh',
+    width: '100%',
+  },
 };
 
 class App extends Component {
@@ -25,11 +30,18 @@ class App extends Component {
     return (
       <div className= {classes.root}>
         <Header />
-        <Route path="/" exact component={Home}/>
-        <Route path="/about" exact component={About}/>
-        <Route path="/experience" exact component={Experience}/>
-        <Route path="/projects" exact component={Projects}/>
-        <Route path="/contact" exact component={Contact}/>
+        <Grid 
+          className={classes.grid}
+          container
+          direction="column"
+          alignItems="center"
+          justify="center">
+          <Route path="/" exact component={Home}/>
+          <Route path="/about" exact component={About}/>
+          <Route path="/experience" exact component={Experience}/>
+          <Route path="/projects" exact component={Projects}/>
+          <Route path="/contact" exact component={Contact}/>
+        </Grid>
       </div>
     );
   }

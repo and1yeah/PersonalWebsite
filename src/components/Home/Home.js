@@ -36,10 +36,6 @@ const styles = {
      	height: "100%",
     }
 	},
-  grid: {
-    minHeight: '80vh',
-    width: '100%',
-  },
   bigAvatar: {
     margin: 30,
     color: '#fff',
@@ -64,34 +60,27 @@ class Home extends React.Component {
 
     return (
       <div>
-        <Grid
-          className={classes.grid}
-          container
-          direction="column"
-          alignItems="center"
-          justify="center">
-          <Avatar alt="Andy Ye" className={classes.bigAvatar}>AY</Avatar>
-          <Typography component="h2" variant="headline" gutterBottom><b>Andy Wong Ye | Software Engineer</b></Typography>
-          <MuiThemeProvider theme={quote}>
-            <Typography variant="title" gutterBottom><b>"Be Happy, But Never Satisfied"</b></Typography>
-          </MuiThemeProvider>
-          <Grid item>
-            <IconButton className={classes.socialBtn} href="https://www.facebook.com/And1.Yeah">
-              <SvgIcon className={classes.socialIcon} fontSize="large" nativeColor='#3b5998'>
-                <path d={Constants.facebook}/>
-              </SvgIcon>
-            </IconButton>
-            <IconButton className={classes.socialBtn} href="http://www.linkedin.com/in/And1-Yeah">
-              <SvgIcon className={classes.socialIcon} fontSize="large" nativeColor='#007bb6'>
-                <path d={Constants.linkedin}/>
-              </SvgIcon>
-            </IconButton>
-            <IconButton className={classes.socialBtn} href="https://www.instagram.com/and1.yeah/">
-              <SvgIcon className={classes.socialIcon} fontSize="large" nativeColor='#bc2a8d'>
-                <path d={Constants.instagram}/>
-              </SvgIcon>
-            </IconButton>
-          </Grid>
+        <Avatar alt="Andy Ye" className={classes.bigAvatar}>AY</Avatar>
+        <Typography component="h2" variant="headline" gutterBottom><b>Andy Wong Ye | Software Engineer</b></Typography>
+        <MuiThemeProvider theme={quote}>
+          <Typography variant="title" gutterBottom><b>"Be Happy, But Never Satisfied"</b></Typography>
+        </MuiThemeProvider>
+        <Grid item>
+          <IconButton className={classes.socialBtn} href="https://www.facebook.com/And1.Yeah">
+            <SvgIcon className={classes.socialIcon} fontSize="large" nativeColor='#3b5998'>
+              <path d={Constants.facebook}/>
+            </SvgIcon>
+          </IconButton>
+          <IconButton className={classes.socialBtn} href="http://www.linkedin.com/in/And1-Yeah">
+            <SvgIcon className={classes.socialIcon} fontSize="large" nativeColor='#007bb6'>
+              <path d={Constants.linkedin}/>
+            </SvgIcon>
+          </IconButton>
+          <IconButton className={classes.socialBtn} href="https://www.instagram.com/and1.yeah/">
+            <SvgIcon className={classes.socialIcon} fontSize="large" nativeColor='#bc2a8d'>
+              <path d={Constants.instagram}/>
+            </SvgIcon>
+          </IconButton>
         </Grid>
       </div>
     )

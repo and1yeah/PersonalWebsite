@@ -26,13 +26,9 @@ const styles = theme => ({
     "#componentWithId": {
      	height: "100%",
     }
-	},
-  grid: {
-    minHeight: '60vh',
-    width: '100%',
   },
-  innerGrid: {
-    width: '40%',
+  div: {
+    width: "60%",
   },
   contact: {
     color: '#0f0f13',
@@ -81,56 +77,47 @@ class Contact extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <div className={classes.div}>
+        <Typography className={classes.contact} component="h2" variant="display1" gutterBottom><b>Contact</b></Typography>
+        <span className={classes.bar}></span>
+        <Typography className={classes.meet} variant="title" gutterBottom><b>Have a question or want to work together?</b></Typography>
         <Grid
-          className={classes.grid}
           container
           direction="column"
-          alignItems="center"
           justify="center">
-          <Typography className={classes.contact} component="h2" variant="display1" gutterBottom><b>Contact</b></Typography>
-          <span className={classes.bar}></span>
-          <Typography className={classes.meet} variant="title" gutterBottom><b>Have a question or want to work together?</b></Typography>
-          <Grid
-            className={classes.innerGrid}
+          <TextField
+            className={classes.textField}
+            id="outlined-name"
+            label={<b>Name</b>}
+            value={this.state.name}
+            onChange={this.handleChange('name')}
+            margin="normal"
+          />
+          <TextField
+            className={classes.textField}
+            id="outlined-email"
+            label={<b>Email</b>}
+            value={this.state.email}
+            onChange={this.handleChange('email')}
+            margin="normal"
+          />
+          <TextField
+            className={classes.textField}
+            id="outlined-multiline-flexible"
+            label={<b>Message</b>}
+            multiline
+            rowsMax="4"
+            value={this.state.message}
+            onChange={this.handleChange('message')}
+            margin="normal"
+            />
+          <Grid 
             container
-            direction="column"
-            justify="center">
-            <TextField
-              className={classes.textField}
-              id="outlined-name"
-              label={<b>Name</b>}
-              value={this.state.name}
-              onChange={this.handleChange('name')}
-              margin="normal"
-            />
-            <TextField
-              className={classes.textField}
-              id="outlined-email"
-              label={<b>Email</b>}
-              value={this.state.email}
-              onChange={this.handleChange('email')}
-              margin="normal"
-            />
-            <TextField
-              className={classes.textField}
-              id="outlined-multiline-flexible"
-              label={<b>Message</b>}
-              multiline
-              rowsMax="4"
-              value={this.state.message}
-              onChange={this.handleChange('message')}
-              margin="normal"
-
-            />
-            <Grid 
-              container
-              justify="flex-end">
-              <Button className={classes.send} variant="contained" color="primary">
-                <b>Send</b>
-                <Icon className={classes.rightIcon}>send</Icon>
-              </Button>
-            </Grid>
+            justify="flex-end">
+            <Button className={classes.send} variant="contained" color="primary">
+              <b>Send</b>
+              <Icon className={classes.rightIcon}>send</Icon>
+            </Button>
           </Grid>
         </Grid>
       </div>
